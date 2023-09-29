@@ -1,2 +1,2 @@
-# js-assignment2
+# js-bgchanger
  More practice on JS
