@@ -1,10 +1,18 @@
 function changeName(){
-    let name = prompt("Input your name")
+    var user = {
+        fname: prompt("Input your first name"),
+        lname: prompt("Input your last name"),
+        age: parseInt(prompt("Input your age")),
+        gender: prompt("Input your gender e.g Male or Female"),
+        relationshipStatus: prompt("Are you single, engaged or complicated?"),
+    };
 
-    if (name == "") {
+    if (user.fname == "" && user.lname == "") {
         document.getElementById("greeting").textContent="We will love to meet you!"
     } else {
-        document.getElementById("greeting").textContent=`Hello, ${name}!`
+        document.getElementById("greeting").textContent=`Hello, ${user.fname} ${user.lname}!`;
+
+        document.getElementById("extra").textContent = `You are ${user.age} years old, a ${user.gender} and are ${user.relationshipStatus}. It's nice meeting you!`;
     }
 
 }
@@ -95,34 +103,36 @@ function color() {
     // })
 }
 
+
 function hide() {
     const textToToggle = document.getElementById("hero-subtext");
-  const toggleButton = document.getElementById("toggleButton");
-  let isTextVisible = true; // Flag to track text visibility
-
-  toggleButton.addEventListener("click", function () {
-    if (isTextVisible = true) {
+    const toggleButton = document.getElementById("toggleButton");
+    // let isTextVisible = true; // Flag to track text visibilit/y
+    if (textToToggle.style.display == "block") {
       textToToggle.style.display = "none"; // Hide the text
       toggleButton.textContent = "Add Text"; // Change button text
     } else {
-      textToToggle.style.display = "block"; // Show the text
-      toggleButton.textContent = "Remove Text"; // Change button text
+        textToToggle.style.display = "block"; // Show the text
+        toggleButton.textContent = "Hide Text"; // Change button text
     }
 
-    isTextVisible = !(isTextVisible); // Toggle the flag
-  });
+     // const textToToggle = document.getElementById("hero-subtext");
+    // const toggleButton = document.getElementById("toggleButton");
 
-    // document.getElementById("hero-subtext").style.display = "none";
+    // toggleButton.addEventListener("click", function () {
+    //   textToToggle.style.display = textToToggle.style.display === "none" ? "block" : "none";
+    //   toggleButton.textContent = textToToggle.style.display === "none" ? "Add Text" : "Hide Text";
+    // });
 }
 
 
 //Passing Objects to functions
-var user = {
-    fname: "Jesuferanmi",
-    lname: "Agboola",
-    age: 20,
-    hobby: "None",
-    relationshipStatus: false,
-};
+// var user = {
+//     fname: "Jesuferanmi",
+//     lname: "Agboola",
+//     age: 20,
+//     hobby: "None",
+//     relationshipStatus: false,
+// };
 
-console.log(user)
+// console.log(user);
